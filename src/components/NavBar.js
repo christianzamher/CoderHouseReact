@@ -10,7 +10,7 @@ function NavBar() {
         <>
         
         <Navbar bg="light" expand="lg">
-            <Container className="pb-6" >
+            <Container className="pb-6N" >
                 <Navbar.Brand href="#home">Coder-Commerce</Navbar.Brand>
                 <Navbar.Toggle aria-controls="basic-navbar-nav" />
                 <Navbar.Collapse id="basic-navbar-nav">
