@@ -8,9 +8,10 @@ import CartWidget from "./CartWidget"
 function NavBar() {
     return (
         <>
+        
         <Navbar bg="light" expand="lg">
-            <Container className="pb-5" >
-                <Navbar.Brand href="#home">  <CartWidget/> Coder-Commerce</Navbar.Brand>
+            <Container className="pb-6" >
+                <Navbar.Brand href="#home">Coder-Commerce</Navbar.Brand>
                 <Navbar.Toggle aria-controls="basic-navbar-nav" />
                 <Navbar.Collapse id="basic-navbar-nav">
                     <Nav className="me-auto">
@@ -25,8 +26,9 @@ function NavBar() {
                         </NavDropdown>
                     </Nav>
                 </Navbar.Collapse>
+                <CartWidget/>
             </Container>
-        </Navbar>
+           </Navbar>
         
          </>
     )

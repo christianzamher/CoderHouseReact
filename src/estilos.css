@@ -30,6 +30,7 @@ footer {
     text-align: center;
     color: blanchedalmond;
     font-size: 30px;
+    width: auto;
     
    
 } 
@@ -39,9 +40,13 @@ footer {
     display: flex;
     align-items:center;
     justify-content: center;
-    flex-direction: column;
+    flex-direction: row;
     
 
 }
 
+.BsCart{
+    display: flex;
+    justify-content: flex-end;
+}
 
