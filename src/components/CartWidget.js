@@ -2,7 +2,7 @@ import { BsCart4 } from 'react-icons/bs';
 function CartWidget() {
   return (
       <>
-    <a href="e-comerce.com"><BsCart4 size="2em" color="black"/></a>
+    <a className="BsCart" href="e-comerce.com"><BsCart4 size="2em" color="black" /></a>
     </>
   )
 }
