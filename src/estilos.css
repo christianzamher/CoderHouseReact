@@ -60,3 +60,12 @@ p{
 }
 
 
+
+.btns{
+display: flex;
+width: 100px;
+flex-direction: row;
+justify-content: center;
+}
+
+
