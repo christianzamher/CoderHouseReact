@@ -2,7 +2,7 @@ const Footer = () => {
   return (
     <footer>
       <>
-        <div className="footerDiv">Desafio 2 CartWidget por Christian Zamora Hermida</div>
+        <div className="footerDiv">Desafio hecho por Christian Zamora Hermida</div>
       </>
     </footer>
   );
