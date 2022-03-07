@@ -39,13 +39,11 @@ const ItemCount = (props) => {
                     <span></span>
                 
                 
-                <button  variant="primary" size="sm"  onClick={disminuir} disabled={numeroProducto === 1} >-</button>
-                <h3 className="h3Producto"  > Stock: {numeroProducto}</h3>
-                <button  variant="primary" size="sm" onClick={aumentar} disabled= {numeroProducto === props.stock}>+</button>
-
-                  
-                 </div>
-                <a href="google.com">Buy Now</a>
+                    <button    onClick={disminuir} disabled={numeroProducto === 1} >-</button>
+                    <h3 className="h3Producto"  > Stock: {numeroProducto}</h3>
+                    <button   onClick={aumentar} disabled= {numeroProducto === props.stock}>+</button>
+                </div>
+                    <button   onClick={props.OnAdd} >Agregar al Carrito</button>
                 </div>
             </div>
         </div>
