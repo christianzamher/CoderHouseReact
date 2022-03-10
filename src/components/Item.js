@@ -3,15 +3,15 @@ import {Card,ListGroupItem} from "react-bootstrap"
 import ItemCount from './ItemCount'
 
 
-const Item = ({product}) => {
-    const {nombre,precio, descripcion,imagen} = product
+const Item = ({cardList}) => {
+    const {nombre,precio, descripcion,imagen} = cardList
     return (
     <>
     
     
   
 
-    <Card bg="dark" text="white"  border="warning" style={{ width: '18rem' }}>
+    <Card bg="dark" text="white"  border="warning" style={{ width: '30rem' }}>
     <Card.Title>{nombre}</Card.Title>
     <Card.Img variant="top" className="imgSet" src={imagen} alt="" />
     <Card.Body >{descripcion}<Card.Text>

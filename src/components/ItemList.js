@@ -3,13 +3,13 @@ import Item from "./Item"
 
 
 
-function ItemList ({products})  {
+function ItemList ({wishList})  {
      
      return (
          <>
          <div className="itemContainer">
-         {products.map((product) =>(
-        <Item key= {product.id} product={product}/>
+         {wishList.map((product) =>(
+        <Item key= {product.id} cardList={product}/>
      ))}
          </div>
          </>

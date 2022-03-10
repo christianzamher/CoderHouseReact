@@ -1,6 +1,8 @@
 import React , {useState,useEffect}  from 'react'
 // import ItemCount from './ItemCount'
 import ItemList from './ItemList'
+import {ProgressBar} from "react-bootstrap"
+
 
 const ArrayProductos = [{
   "id": 1,
@@ -71,7 +73,7 @@ const ArrayProductos = [{
 function ItemListContainer(props) {
   
   // const MiOnAdd= ()=>{}
-  const [products, setProductos] = useState([])
+  const [productsList, setProductos] = useState([])
   const [cargar, setCargar] = useState(false)
 
   useEffect(() => {
@@ -81,10 +83,9 @@ function ItemListContainer(props) {
         }, 3000);
       });
 
-      delay
-        .then((res) =>{
-          setProductos(res);
+      delay.then((res) =>{
           setCargar(true);
+          setProductos(res);
 
         })
       .catch((error)=> console.dir(error));
@@ -96,10 +97,9 @@ function ItemListContainer(props) {
   return (
       <>
       <h1 className='h1Item'>{props.greetings}</h1>
-      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus corporis placeat nihil beatae fugiat porro eum laboriosam, tempore dolor! Pariatur molestias quasi dolores fugiat mollitia saepe eius quae! Excepturi, cumque.</p>
       
       <main className='mainContainer' >
-        {!cargar ?(<div> <h2>Cargado Productos, espere...</h2></div>) : (<ItemList products={products}/>)}
+        {!cargar ?(<div> <ProgressBar animated now={82} /><h2 className="loading h1Item">Cargado Productos, espere...</h2></div>) : (<ItemList wishList={productsList}/>)}
       </main>
 
       </>
