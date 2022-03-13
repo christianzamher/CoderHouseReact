@@ -1,5 +1,5 @@
-import React , {useState,useEffect}  from 'react'
-import ItemList from './ItemList'
+import React , {useState,useEffect} from 'react'
+import ItemDetail from './ItemDetail';
 import {ProgressBar} from "react-bootstrap"
 
 
@@ -67,15 +67,12 @@ const ArrayProductos = [{
   "descripcion": "1/2 kg de helado de diferentes sabores (consultar)"
 }
 ]
-
-
-
-
-function ItemListContainer(props) {
-  
-  // const MiOnAdd= ()=>{}
+const ItemDetailContainer = () => {
   const [productsList, setProductos] = useState([])
   const [cargar, setCargar] = useState(false)
+  
+
+ 
 
   useEffect(() => {
       const delay = new Promise((res,rej)=>{
@@ -85,40 +82,20 @@ function ItemListContainer(props) {
       });
 
       delay.then((res) =>{
-          setCargar(true);
-          setProductos(res);
+        setCargar(true);
+          setProductos(res.find(product => product.precio < 200));
 
         })
       .catch((error)=> console.dir(error));
   },[]);
-//   useEffect(() => {
-//     const api = fetch('https://fakestoreapi.com/products')
-    
-//     .then(res=>res.json())
-//     api.then((res) =>{
-//       setCargar(true);
-//       setProductos(res);
-
-//     })
-//   .catch((error)=> console.dir(error));
-// },[]);
   
-   
-  
-
-
   return (
-      <>
-      <h1 className='h1Item'>{props.greetings}</h1>
-      
-      <main className='mainContainer' >
-        {!cargar ?(<div> <ProgressBar animated now={82} /><h2 className="loading h1Item">Cargado Productos, espere...</h2></div>) : (<ItemList wishList={productsList}/>)}
+    <>
+    <main className='mainContainer' >
+        {!cargar ?(<div> <ProgressBar animated now={82} /><h2 className="loading h1Item">Cargado Productos, espere...</h2></div>) : (<ItemDetail wishList={productsList}/>)}
       </main>
-
-      </>
-    
-
+    </>
   )
 }
 
-export default ItemListContainer
+export default ItemDetailContainer

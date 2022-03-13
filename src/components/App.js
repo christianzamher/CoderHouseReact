@@ -3,6 +3,7 @@ import Footer from "./Footer"
 import Header from "./Header"
 import Main from './Main'
 import ItemListContainer from './ItemListContainer'
+import ItemDetailContainer from "./ItemDetailContainer"
 
 
 
@@ -15,6 +16,7 @@ function App() {
             <NavBar/>
             <ItemListContainer greetings= 'Bienvenidos al E-Comerce '/>                   
             <Main/>
+            <ItemDetailContainer/>
             <Footer/>
         </>
     )

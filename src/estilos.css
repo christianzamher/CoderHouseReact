@@ -50,6 +50,7 @@ footer {
 .h1Item{
     text-align: center;
     text-shadow: 4px 4px 2px rgba(207, 221, 80, 0.979);
+    background-color: #f0be77;
 }
 
 p{
@@ -88,11 +89,15 @@ p{
 }
 
 .imgSet{
-  width: 400px;
-  height: auto;
+  width: auto;
+  height: 500px;
 
 }
 
 .loading{
   color:white
+}
+
+img{
+  width: auto;
 }

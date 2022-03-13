@@ -1,1 +1,2 @@
-rafce para crear componentes
+rafce :para crear componentes
+imc :  para importar componentes
