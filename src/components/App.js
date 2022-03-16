@@ -2,23 +2,22 @@ import NavBar from "./NavBar"
 import Footer from "./Footer"
 import Header from "./Header"
 import Main from './Main'
-import ItemListContainer from './ItemListContainer'
-import ItemDetailContainer from "./ItemDetailContainer"
-
+import {BrowserRouter} from 'react-router-dom'
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 
 
 
 function App() {
     return (
-        <>
+        <BrowserRouter>
             <Header />
             <NavBar/>
-            <ItemListContainer greetings= 'Bienvenidos al E-Comerce '/>                   
             <Main/>
-            <ItemDetailContainer/>
             <Footer/>
-        </>
+            <ToastContainer/>
+       </BrowserRouter>
     )
 }
 

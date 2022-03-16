@@ -1,101 +1,103 @@
-import React , {useState,useEffect} from 'react'
-import ItemDetail from './ItemDetail';
-import {ProgressBar} from "react-bootstrap"
+import React, { useState, useEffect } from "react";
+import ItemDetail from "./ItemDetail";
+import { toast } from "react-toastify";
 
-
-const ArrayProductos = [{
-  "id": 1,
-  "nombre": " Cerveza ",
-  "imagen": "./images/cerveza3.jpg",
-  "precio": 290,
-  "descripcion": "Chop Cerveza de 1lt Artesanal(IPA , Golden ,Honey, Red , Stout)"
-},
-{
-  "id": 2,
-  "nombre": "Gaseosa",
-  "imagen": "./images/gaseosa.png",
-  "precio": 180,
-  "descripcion": "Lata de Gaseosa de 500cm3 (Naranja , Pomelo, Tonica) "
-},
-{
-  "id": 3,
-  "nombre": "Combo 2",
-  "imagen": "./images/milanesa.jpg",
-  "precio": 800,
-  "descripcion": "Milanesa Napolitada con Papas Fritas "
-},
-{
-  "id": 4,
-  "nombre": "Combo3",
-  "imagen": "./images/cafe2.jpg",
-  "precio": 320,
-  "descripcion": "Cafe con Leche + 3 medialunas + agua + jugo de naranja"
-},
-{
-  "id": 5,
-  "nombre": "Combo 4",
-  "imagen": "./images/hamburguesa.jpg",
-  "precio": 730,
-  "descripcion": "Hamburguesa Completa + huevo frito + cerveza 500cm3"
-},
-{
-  "id": 6,
-  "nombre": "Combo 5",
-  "imagen": "./images/hamburguesaveggie.jpg",
-  "precio": 850,
-  "descripcion": "Hamburguesa Opcion Veggie + papas fritas + Bebida"
-},
-{
-  "id": 7,
-  "nombre": "Combo 6",
-  "imagen": "./images/hamburguesa2.jpg",
-  "precio": 600,
-  "descripcion": "Hamburguesa 180gr + cheddar + papas fritas "
-},
-{
-  "id": 8,
-  "nombre": "Combo 7",
-  "imagen": "./images/pizza2.png",
-  "precio": 700,
-  "descripcion": "Pizza grande de Mozzarella + jamon + cebolla de verdeo "
-},
-{
-  "id": 9,
-  "nombre": "Combo 8",
-  "imagen": "./images/helado.jpg",
-  "precio": 400,
-  "descripcion": "1/2 kg de helado de diferentes sabores (consultar)"
-}
-]
+const ArrayProductos = [
+  {
+    id: 1,
+    nombre: " Cerveza ",
+    imagen: "./images/cerveza3.jpg",
+    precio: 290,
+    descripcion:
+      "Chop Cerveza de 1lt Artesanal(IPA , Golden ,Honey, Red , Stout)",
+  },
+  {
+    id: 2,
+    nombre: "Gaseosa",
+    imagen: "./images/gaseosa.png",
+    precio: 180,
+    descripcion: "Lata de Gaseosa de 500cm3 (Naranja , Pomelo, Tonica) ",
+  },
+  {
+    id: 3,
+    nombre: "Combo 2",
+    imagen: "./images/milanesa.jpg",
+    precio: 800,
+    descripcion: "Milanesa Napolitada con Papas Fritas ",
+  },
+  {
+    id: 4,
+    nombre: "Combo3",
+    imagen: "./images/cafe2.jpg",
+    precio: 320,
+    descripcion: "Cafe con Leche + 3 medialunas + agua + jugo de naranja",
+  },
+  {
+    id: 5,
+    nombre: "Combo 4",
+    imagen: "./images/hamburguesa.jpg",
+    precio: 730,
+    descripcion: "Hamburguesa Completa + huevo frito + cerveza 500cm3",
+  },
+  {
+    id: 6,
+    nombre: "Combo 5",
+    imagen: "./images/hamburguesaveggie.jpg",
+    precio: 850,
+    descripcion: "Hamburguesa Opcion Veggie + papas fritas + Bebida",
+  },
+  {
+    id: 7,
+    nombre: "Combo 6",
+    imagen: "./images/hamburguesa2.jpg",
+    precio: 600,
+    descripcion: "Hamburguesa 180gr + cheddar + papas fritas ",
+  },
+  {
+    id: 8,
+    nombre: "Combo 7",
+    imagen: "./images/pizza2.png",
+    precio: 700,
+    descripcion: "Pizza grande de Mozzarella + jamon + cebolla de verdeo ",
+  },
+  {
+    id: 9,
+    nombre: "Combo 8",
+    imagen: "./images/helado.jpg",
+    precio: 400,
+    descripcion: "1/2 kg de helado de diferentes sabores (consultar)",
+  },
+];
 const ItemDetailContainer = () => {
-  const [productsList, setProductos] = useState([])
-  const [cargar, setCargar] = useState(false)
-  
-
- 
+  const [productsList, setProductos] = useState([]);
+  const [cargar, setCargar] = useState(false);
 
   useEffect(() => {
-      const delay = new Promise((res,rej)=>{
-        setTimeout(()=>{
-          res(ArrayProductos);
-        }, 3000);
-      });
+    const delay = new Promise((res, rej) => {
+      setTimeout(() => {
+        res(ArrayProductos);
+      }, 2000);
+    });
 
-      delay.then((res) =>{
+    delay
+      .then((res) => {
         setCargar(true);
-          setProductos(res.find(product => product.precio < 200));
+        setProductos(res.find((product) => product.precio < 200));
+      })
+      .catch((error) => toast.error(error));
+  }, []);
 
-        })
-      .catch((error)=> console.dir(error));
-  },[]);
-  
   return (
     <>
-    <main className='mainContainer' >
-        {!cargar ?(<div> <ProgressBar animated now={82} /><h2 className="loading h1Item">Cargado Productos, espere...</h2></div>) : (<ItemDetail wishList={productsList}/>)}
+      <main className="mainContainer">
+        {!cargar ? (
+          <div className="loader">Loading...</div>
+        ) : (
+          <ItemDetail wishList={productsList} />
+        )}
       </main>
     </>
-  )
-}
+  );
+};
 
-export default ItemDetailContainer
+export default ItemDetailContainer;

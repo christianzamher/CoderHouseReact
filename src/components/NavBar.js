@@ -1,6 +1,6 @@
 import { Container, Nav, Navbar, NavDropdown } from "react-bootstrap"
 import CartWidget from "./CartWidget"
-
+import { Link } from "react-router-dom";
 
 function NavBar() {
     return (
@@ -8,18 +8,19 @@ function NavBar() {
         
         <Navbar bg="light" expand="lg">
             <Container className="pb-6N" >
-                <Navbar.Brand href="#home">Coder-Commerce</Navbar.Brand>
+                <Navbar.Brand as={Link} to="/Home">Coder-Commerce</Navbar.Brand>
                 <Navbar.Toggle aria-controls="basic-navbar-nav" />
                 <Navbar.Collapse id="basic-navbar-nav">
                     <Nav className="me-auto">
-                        <Nav.Link href="#home">Home</Nav.Link>
-                        <Nav.Link href="#link">Contact</Nav.Link>
-                        <NavDropdown title="Menu" id="basic-nav-dropdown">
-                            <NavDropdown.Item href="#action/3.1">About Us</NavDropdown.Item>
-                            <NavDropdown.Item href="#action/3.2">Partners</NavDropdown.Item>
-                            <NavDropdown.Item href="#action/3.3">Gallery</NavDropdown.Item>
-                            <NavDropdown.Divider />
-                            <NavDropdown.Item href="#action/3.4">Contact Us</NavDropdown.Item>
+                        <Nav.Link as={Link} to="/Home">Home</Nav.Link>
+                        <Nav.Link as={Link} to="/aboutus">About Us</Nav.Link>
+                        <Nav.Link as={Link} to="/Contact">Contact</Nav.Link>
+                        <NavDropdown title="Category" id="basic-nav-dropdown">
+                            <NavDropdown.Item as={Link} to="/category/hamburguesa">Burguers</NavDropdown.Item>
+                            <NavDropdown.Item as={Link} to="/category/bebida">Drinks</NavDropdown.Item>
+                            <NavDropdown.Item as={Link} to="/category/milanesas">Milanesas</NavDropdown.Item>
+                            <NavDropdown.Item as={Link} to="/category/desayuno">Breackfasts & Brunches</NavDropdown.Item>
+                            <NavDropdown.Item as={Link} to="/category/postre">Dessert</NavDropdown.Item>
                         </NavDropdown>
                     </Nav>
                 </Navbar.Collapse>

@@ -1,8 +1,10 @@
 import { BsCart4 } from 'react-icons/bs';
+import { Link } from "react-router-dom";
+
 function CartWidget() {
   return (
       <>
-    <a className="BsCart" href="e-comerce.com"><BsCart4 size="2em" color="black" /></a>
+    <Link className="BsCart" to=""><BsCart4 size="2em" color="black" /></Link>
     </>
   )
 }
