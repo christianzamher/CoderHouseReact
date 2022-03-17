@@ -90,7 +90,7 @@ function ItemListContainer(props) {
     const delay = new Promise((res, rej) => {
       setTimeout(() => {
         res(ArrayProductos);
-      }, 3000);
+      }, 1500);
     });
 
     delay

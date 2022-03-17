@@ -9,7 +9,7 @@ const ItemDetail = ({ wishList }) => {
     <>
       <Card bg="dark" text="white" border="warning" style={{ width: "30rem" }}>
         <Card.Title>{nombre}</Card.Title>
-        <Card.Img variant="top" className="imgSet" src={imagen} alt="" />
+        <Card.Img variant="top" className="imgSet" src= {`/${imagen}`} />
         <Card.Body>
           {descripcion}
           <Card.Text>
