@@ -73,7 +73,7 @@ p{
 
 .mainContainer{
   display: flex;
-  flex-direction: column;
+  /* flex-direction: column; */
   justify-content: center;
   align-content: center;
 }
@@ -109,7 +109,9 @@ img{
 
 .active{
   text-decoration: none;
-  color: black;
+  color: rgb(182, 176, 164);
+  display: flex;
+  justify-content: center;
 }
 
 .card{
@@ -119,7 +121,7 @@ img{
 .footerLink{
   font-size: 20px;
   text-decoration: none;
-  color:black
+  color:rgb(224, 219, 204)
   
 }
 

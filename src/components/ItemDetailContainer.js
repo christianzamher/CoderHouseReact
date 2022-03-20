@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import ItemDetail from "./ItemDetail";
 import { toast } from "react-toastify";
+import { useParams } from "react-router-dom";
 
 const ArrayProductos = [
   {
@@ -71,6 +72,9 @@ const ArrayProductos = [
 const ItemDetailContainer = () => {
   const [productsList, setProductos] = useState([]);
   const [cargar, setCargar] = useState(false);
+  const {id} = useParams()
+
+  
 
   useEffect(() => {
     const delay = new Promise((res, rej) => {
@@ -82,7 +86,7 @@ const ItemDetailContainer = () => {
     delay
       .then((res) => {
         setCargar(true);
-        setProductos(res.find((product) => product.precio < 200));
+        setProductos(res.find((product) => product.id === +id));
       })
       .catch((error) => toast.error(error));
   }, []);

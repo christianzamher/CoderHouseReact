@@ -1,9 +1,12 @@
 import React from "react";
 import { Card  } from "react-bootstrap";
 import ItemCount from "./ItemCount";
+import { Link } from "react-router-dom";
 
 const ItemDetail = ({ wishList }) => {
   const { nombre, precio, descripcion, imagen } = wishList;
+  
+  
 
   return (
     <>
@@ -13,10 +16,11 @@ const ItemDetail = ({ wishList }) => {
         <Card.Body>
           {descripcion}
           <Card.Text>
-             ${precio}
+           $ {precio}
             <br></br>
           </Card.Text>
-          <ItemCount stock={5} initial={1} />
+          <ItemCount stock={5} initial={1}   />
+          <Link to="/home" className="active" >Volver</Link>
         </Card.Body>
       </Card>
     </>

@@ -1,9 +1,14 @@
 import React from "react";
-import { Card, ListGroupItem } from "react-bootstrap";
+import { Card, ListGroupItem,Nav } from "react-bootstrap";
 import ItemCount from "./ItemCount";
+import { Link } from "react-router-dom";
 
 const Item = ({ cardList }) => {
-  const { nombre, precio, descripcion, imagen } = cardList;
+  const { nombre, precio, descripcion, imagen , id} = cardList;
+
+  const onAdd = ()=>{
+    console.dir("click")
+  }
 
   return (
     <>
@@ -11,12 +16,13 @@ const Item = ({ cardList }) => {
         <Card.Title>{nombre}</Card.Title>
         <Card.Img variant="top" className="imgSet" src={`/${imagen}`} />
         <Card.Body>
-          {descripcion}
+        {descripcion}
           <Card.Text>
-            <ListGroupItem> ${precio}</ListGroupItem>
+            <ListGroupItem> ${precio} </ListGroupItem>
             <br></br>
           </Card.Text>
-          <ItemCount stock={5} initial={1} />
+          <ItemCount stock={5} initial={1} onAdd= {onAdd}  />
+          <Link className="active" to={`/item/${id}`}>Mas detalles</Link>
         </Card.Body>
       </Card>
     </>

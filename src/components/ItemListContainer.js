@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import ItemList from "./ItemList";
-// import {ProgressBar} from "react-bootstrap"
 import { useParams } from "react-router-dom";
+
 
 const ArrayProductos = [
   {
@@ -80,11 +80,12 @@ const ArrayProductos = [
 ];
 
 function ItemListContainer(props) {
-  // const MiOnAdd= ()=>{}
+  
   const [productsList, setProductos] = useState([]);
   const [cargar, setCargar] = useState(false);
   const params = useParams();
   const category = params.id;
+  
 
   useEffect(() => {
     const delay = new Promise((res, rej) => {
