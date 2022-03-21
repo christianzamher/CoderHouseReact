@@ -1,11 +1,23 @@
-import React from "react";
-import { Card  } from "react-bootstrap";
+import React, { useState } from "react";
+import { Card ,Button  } from "react-bootstrap";
 import ItemCount from "./ItemCount";
 import { Link } from "react-router-dom";
+import {  toast } from 'react-toastify';
 
 const ItemDetail = ({ wishList }) => {
   const { nombre, precio, descripcion, imagen } = wishList;
   
+  const [carrito, setCarrito] = useState(false)
+  
+  const onAdd = ()=>{
+     setCarrito(!carrito)
+     toast.success("Compra Exitosa !", {
+      position: toast.POSITION.TOP_RIGHT
+    });
+
+   }
+
+    
   
 
   return (
@@ -19,8 +31,9 @@ const ItemDetail = ({ wishList }) => {
            $ {precio}
             <br></br>
           </Card.Text>
-          <ItemCount stock={5} initial={1}   />
-          <Link to="/home" className="active" >Volver</Link>
+          {carrito ? <Link to="/carrito" className="active" > Go to Cart</Link> :  <ItemCount stock={5} initial={1} onAdd= {onAdd} carrito={carrito}  /> }      
+          <Link to="/home" className="active" >Home</Link>
+
         </Card.Body>
       </Card>
     </>

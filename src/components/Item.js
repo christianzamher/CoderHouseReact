@@ -6,9 +6,7 @@ import { Link } from "react-router-dom";
 const Item = ({ cardList }) => {
   const { nombre, precio, descripcion, imagen , id} = cardList;
 
-  const onAdd = ()=>{
-    console.dir("click")
-  }
+ 
 
   return (
     <>
@@ -21,8 +19,8 @@ const Item = ({ cardList }) => {
             <ListGroupItem> ${precio} </ListGroupItem>
             <br></br>
           </Card.Text>
-          <ItemCount stock={5} initial={1} onAdd= {onAdd}  />
-          <Link className="active" to={`/item/${id}`}>Mas detalles</Link>
+          {/* <ItemCount stock={5} initial={1}   /> */}
+          <Link className="active" to={`/item/${id}`}>+ Details</Link>
         </Card.Body>
       </Card>
     </>
