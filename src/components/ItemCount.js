@@ -21,7 +21,6 @@ function ItemCount ({stock,initial,onAdd, carrito}) {
         <>
                     <h5 className="h3Producto"  > Stock: {numeroProducto}</h5>
                     <div className= "divContainer">
-                    
                     <Button variant="info" size="sm"   onClick={disminuir} disabled={numeroProducto === 1} >-</Button>{' '}
                     <Button variant="success"   onClick={onAdd} >{!carrito ? 'Buy' : 'Go to Cart'}</Button>{' '}
                     <Button variant="info" size="sm"  onClick={aumentar} disabled= {numeroProducto === stock}>+</Button>{' '}
