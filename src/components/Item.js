@@ -19,7 +19,7 @@ const Item = ({ cardList }) => {
             <ListGroupItem> ${precio} </ListGroupItem>
             <br></br>
           </Card.Text>
-          {/* <ItemCount stock={5} initial={1}   /> */}
+         
           <Link className="active" to={`/item/${id}`}>+ Details</Link>
         </Card.Body>
       </Card>

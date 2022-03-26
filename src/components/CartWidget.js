@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 function CartWidget() {
   return (
       <>
-    <Link className="BsCart" to=""><BsCart4 size="2em" color="black" /></Link>
+    <Link className="BsCart" to="/cart"><BsCart4 size="2em" color="black" /></Link>
     </>
   )
 }

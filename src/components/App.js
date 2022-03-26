@@ -5,11 +5,12 @@ import Main from "./Main";
 import { BrowserRouter } from "react-router-dom";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import CartContext from "./CartContext";
+import { MiProvider } from "./CartContext";
+
 
 function App() {
   return (
-    
+     <MiProvider>
       <BrowserRouter>
         <Header />
         <NavBar />
@@ -17,8 +18,7 @@ function App() {
         <Footer />
         <ToastContainer />
       </BrowserRouter>
-    
-    
+     </MiProvider>
   );
 }
 
