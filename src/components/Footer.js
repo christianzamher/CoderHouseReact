@@ -5,7 +5,7 @@ const Footer = () => {
     <footer>
       <>
         <div className="footerDiv">
-          Desafio hecho por Christian Zamora Hermida
+         <h2>Baldir Armoury Shop</h2>
         <Link className="footerLink" to="/contact">
           Contact
         </Link>

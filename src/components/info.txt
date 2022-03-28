@@ -1,3 +1,4 @@
 rafce :para crear componentes
 imc :  para importar componentes
 alt + shift + f = reordena el codigo
+windows + shift +s

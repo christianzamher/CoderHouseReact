@@ -6,20 +6,35 @@ const { Provider } = cartContext;
 export const MiProvider = ({ children }) => { 
 
     const [cart, setCart] = useState([]);
-    console.log(cart);
+    const [total , setTotal] = useState(0)
+    console.log(cart)
+    
    
     const addItem = (producto, cantidad)=>{
-        const AuxCart = [...cart];
-        AuxCart.push({ producto, cantidad });
-        setCart(AuxCart)
-        
+       const cartProduct = {...producto , cantidad}
+       const AuxCart = []
+        if (isInCart(producto)) 
+        {
+        cartProduct = cart.find(item => item.producto.id === producto.id)
+        }
+        else
+        {
+
+          const AuxCart = [...cart];
+          AuxCart.push({ producto, cantidad });
+          setCart(AuxCart)
+        }
+                
         }
     
 
     const removeItem = (id)=>{
-        const AuxCart = cart.filter(elemento=>elemento.producto.id !==id);
-        setCart(AuxCart)
-     }
+      
+           const AuxCart = cart.filter(elemento=>elemento.producto.id !==id);
+           setCart(AuxCart)
+        }
+   
+           
 
     const clear = () => {
         setCart([]);
@@ -27,7 +42,16 @@ export const MiProvider = ({ children }) => {
     }
 
     const isInCart = (id) => {
-        return cart.find(elemento => elemento.producto.id === id);
+        return cart && cart.some(elemento => elemento.producto.id === id);
+    }
+
+    const totalPrecio =()=>{
+        let total = 0;
+        cart.map(elemento=>{
+            total += elemento.producto.precio * elemento.cantidad
+        })
+        setTotal(total)
+        return total
     }
 
     
@@ -35,10 +59,11 @@ export const MiProvider = ({ children }) => {
     
     const ValordelProvider = {
         cart,
-        setCart ,
-        addItem,
+       addItem,
         removeItem,
-        clear 
+        clear ,
+        isInCart,
+        totalPrecio
 
     }
 
