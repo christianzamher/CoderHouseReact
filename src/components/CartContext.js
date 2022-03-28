@@ -6,7 +6,7 @@ const { Provider } = cartContext;
 export const MiProvider = ({ children }) => { 
 
     const [cart, setCart] = useState([]);
-    const [total , setTotal] = useState(0)
+    // const [total , setTotal] = useState(0)
     console.log(cart)
     
    
@@ -46,12 +46,7 @@ export const MiProvider = ({ children }) => {
     }
 
     const totalPrecio =()=>{
-        let total = 0;
-        cart.map(elemento=>{
-            total += elemento.producto.precio * elemento.cantidad
-        })
-        setTotal(total)
-        return total
+        
     }
 
     
