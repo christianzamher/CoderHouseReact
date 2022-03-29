@@ -11,9 +11,12 @@ html,
 body,
 #root {
     height: 100vh;
-    background-image: url("https://www.teahub.io/photos/full/6-63195_food-wallpaper-foods-wallpaper-hd.jpg");
+    background-image: url("https://img4.goodfon.com/wallpaper/nbig/e/e7/fastfud-gamburger-ovoshchi-ogon-dvoe-eda.jpg");
     background-repeat: no-repeat;
     background-attachment: fixed;
+    background-size: 100%;
+    
+     background-color: rgb(189, 182, 172); 
 }
 
 
@@ -24,8 +27,9 @@ footer {
     justify-content: center;
     background-color: rgba(195, 154, 77, 0.712);
     height: 100px;
+    width: 200px;
     text-align: center;
-    
+    position: relative;
     font-size: 30px;
     width: auto;
     
@@ -81,7 +85,7 @@ p{
   align-content: stretch;
   justify-content: space-between;
   align-items: center;
-  
+
 }
 
 .h3Producto{
