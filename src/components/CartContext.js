@@ -1,80 +1,52 @@
-import { createContext, useState, useContext  } from "react";
+import { createContext, useState, useContext } from "react";
 export const cartContext = createContext();
 const { Provider } = cartContext;
 
+export const MiProvider = ({ children }) => {
+  const [cart, setCart] = useState([]);
 
-export const MiProvider = ({ children }) => { 
+  console.log(cart);
 
-    const [cart, setCart] = useState([]);
-    
-    console.log(cart)
-    
-   
-    const addItem = (producto, cantidad)=>{
-    
-        if (isInCart(producto)) 
-        {
-        cartProduct = cart.find(item => item.producto.id === producto.id)
-        }
-        else
-        {
+  const addItem = (producto, cantidad) => {
+    const index = cart.findIndex((i) => i.producto.id === producto.id);
 
-          const AuxCart = [...cart];
-          AuxCart.push({ producto, cantidad });
-          setCart(AuxCart)
-        }
-                
-        }
-    
+    if (index > -1) {
+      const comparandoItems = cart[index].cantidad;
 
-    const removeItem = (id)=>{
-      
-           const AuxCart = cart.filter(elemento=>elemento.producto.id !==id);
-           setCart(AuxCart)
-        }
-   
-           
+      cart.splice(index, 1);
 
-    const clear = () => {
-        setCart([]);
-       
+      setCart([...cart, { producto, cantidad: cantidad + comparandoItems }]);
+    } else {
+      setCart([...cart, { producto, cantidad }]);
     }
+  };
 
-    const isInCart = (id) => {
-        if(cart){
-
-            return cart && cart.some(elemento => elemento.producto.id === id);
-        }
-    }
-
-    const precioTotal = () => {
-        return cart.reduce((suma, i) => suma + i.cantidad * i.producto.precio, 0);
-    }
-
-    
   
+  const removeItem = (id) => {
+    const AuxCart = cart.filter((elemento) => elemento.producto.id !== id);
+    setCart(AuxCart);
+  };
 
-    
+  
+  const clear = () => {
+    setCart([]);
+  };
 
-    
-    const ValordelProvider = {
-        cart,
-       addItem,
-        removeItem,
-        clear ,
-        isInCart,
-        precioTotal
-        
+  
+  const precioTotal = () => {
+    return cart.reduce((suma, i) => suma + i.cantidad * i.producto.precio, 0);
+  };
 
-    }
+  
+  const ValordelProvider = {
+    cart,
+    addItem,
+    removeItem,
+    clear,
+    precioTotal,
+  };
 
+  return <Provider value={ValordelProvider}>{children}</Provider>;
+};
 
-  return (
-        <Provider value={ValordelProvider}>
-        {children}
-        </Provider>
-    )
-}
-
-
-export default cartContext
+export default cartContext;

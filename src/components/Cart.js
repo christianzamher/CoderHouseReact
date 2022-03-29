@@ -5,7 +5,7 @@ import {Card,  Button } from "react-bootstrap";
 
 
 const Cart = () => {
-  const { cart, removeItem,clear,precioTotal } = useContext(cartContext);
+  const { cart, removeItem,clear,precioTotal, addItem } = useContext(cartContext);
   
 
   return (
