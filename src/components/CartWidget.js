@@ -6,21 +6,24 @@ import {Card,  Button } from "react-bootstrap";
 
 function CartWidget() {
 
-  const {cart , addItem} = useContext(cartContext);
+  const {cart} = useContext(cartContext);
   console.log(cart)
   
+  
 
-  const cantidadProductos = useContext(cartContext);
-  console.log(cantidadProductos)
+  
+  
 
   
   return (
       <>
+      
+        
     <Link className="BsCart" to="/cart"><BsCart4 size="2em" color="black" />
     {cart.map((elemento) => (
         <div key={elemento.producto.id}>
           
-              <Card.Text>({elemento.cantidad}) </Card.Text>
+              <Card.Text className="active">({elemento.cantidad}) </Card.Text>
 
            
         </div>

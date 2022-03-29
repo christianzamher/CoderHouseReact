@@ -76,11 +76,12 @@ p{
 
 .compraContainer{
   display: flex;
-  background-color: #da812f;
+  background-color: #da822f77;
   flex-direction: column;
   align-content: stretch;
   justify-content: space-between;
   align-items: center;
+  
 }
 
 .h3Producto{
@@ -130,6 +131,7 @@ img{
   color: rgb(182, 176, 164);
   display: flex;
   justify-content: center;
+  
 }
 
 .card{
@@ -139,9 +141,12 @@ img{
 .footerLink{
   font-size: 20px;
   text-decoration: none;
-  color:rgb(224, 219, 204)
+  color:rgb(209, 203, 183)
   
 }
+
+
+/* Loader:  */
 
 .loader {
   color: #da812f;

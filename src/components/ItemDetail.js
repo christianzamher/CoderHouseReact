@@ -13,6 +13,7 @@ const ItemDetail = ({ wishList}) => {
 
   const item = wishList
  const ProviderContexto = useContext(cartContext);
+
   
   
   
