@@ -1,6 +1,9 @@
 import React, { useState, useEffect } from "react";
 import ItemList from "./ItemList";
+import {db} from './Firebase'
+import { getDocs , query, collection,where } from "firebase/firestore";
 import { useParams } from "react-router-dom";
+console.log(db)
 
 
 const ArrayProductos = [
@@ -88,6 +91,31 @@ function ItemListContainer(props) {
   
 
   useEffect(() => {
+
+    //   const productCollection = collection(db,"productos");
+    //   const documentos = getDocs(productCollection);
+    //   console.log(documentos)
+
+    // documentos
+    //   .then((respuesta) => {
+    //     const auxiliar = []
+    //     respuesta.forEach((documento)=>{
+    //       // console.log(documento.data())
+    //       // console.log(documento.id)
+    //       const productos = {
+    //         id : documento.id,
+    //         ...documento.data()
+    //       }
+    //       auxiliar.push(productos)
+    //     })
+    //     setCargar(auxiliar)
+    //     console.log(auxiliar)
+       
+    //   })
+    //   .catch(() => {
+    //     console.dir("hubo un error")
+    //   })
+
     const delay = new Promise((res, rej) => {
       setTimeout(() => {
         res(ArrayProductos);
@@ -108,6 +136,7 @@ function ItemListContainer(props) {
       })
       .catch((error) => console.dir(error));
   }, [category]);
+  
 
   return (
     <>

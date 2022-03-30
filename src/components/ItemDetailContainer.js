@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import ItemDetail from "./ItemDetail";
 import { toast } from "react-toastify";
 import { useParams } from "react-router-dom";
+import {db} from './Firebase'
 
 const ArrayProductos = [
   {

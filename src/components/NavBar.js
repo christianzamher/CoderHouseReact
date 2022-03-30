@@ -7,7 +7,7 @@ import React, { useContext, useState } from "react";
 function NavBar() {
    
     const {cart} = useContext(cartContext);
-    console.log(cart)
+   
    
     return (
         <>
@@ -31,7 +31,7 @@ function NavBar() {
                     </Nav>
                 </Navbar.Collapse>
                 <Nav.Link as={Link} to="/cart"><CartWidget/></Nav.Link>
-                {/* {carrito ? <Link to="/cart"  className="active" > Go to Cart</Link> :  <ItemCount stock={5} initial={1} onAdd= {onAdd} carrito={carrito}   /> } */}
+               
             </Container>
            </Navbar>
         

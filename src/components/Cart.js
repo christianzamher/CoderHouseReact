@@ -27,7 +27,7 @@ const Cart = () => {
               <Card.Title>{elemento.producto.nombre}</Card.Title>
               <Card.Text>{elemento.producto.descripcion}</Card.Text>
               <Card.Text>{`$${elemento.producto.precio}`}</Card.Text>
-              <Card.Text>Cantidad:{elemento.cantidad} </Card.Text>
+              <Card.Text>Cantidad: {elemento.cantidad} </Card.Text>
               <Card.Text>SubTotal: ${elemento.cantidad * elemento.producto.precio} </Card.Text>
 
               <Button variant="danger" onClick={()=>removeItem(elemento.producto.id)}>X</Button>

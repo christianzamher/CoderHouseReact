@@ -5,7 +5,7 @@ const { Provider } = cartContext;
 export const MiProvider = ({ children }) => {
   const [cart, setCart] = useState([]);
 
-  console.log(cart);
+  
 
   const addItem = (producto, cantidad) => {
     const index = cart.findIndex((i) => i.producto.id === producto.id);
@@ -37,6 +37,14 @@ export const MiProvider = ({ children }) => {
     return cart.reduce((suma, i) => suma + i.cantidad * i.producto.precio, 0);
   };
 
+  const itemTotales = ()=>{
+    let total = 0
+    cart.forEach(elemento => {
+        total += elemento.cantidad
+    });
+    return total
+}
+
   
   const ValordelProvider = {
     cart,
@@ -44,6 +52,7 @@ export const MiProvider = ({ children }) => {
     removeItem,
     clear,
     precioTotal,
+    itemTotales
   };
 
   return <Provider value={ValordelProvider}>{children}</Provider>;
