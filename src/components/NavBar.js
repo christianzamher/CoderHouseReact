@@ -10,7 +10,7 @@ function NavBar() {
    
    
     return (
-        <>
+        
         
         <Navbar bg="light" expand="lg">
             <Container className="pb-6N" >
@@ -35,7 +35,6 @@ function NavBar() {
             </Container>
            </Navbar>
         
-         </>
     )
 }
 
