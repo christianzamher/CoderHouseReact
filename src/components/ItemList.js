@@ -1,12 +1,13 @@
 import React from "react";
 import Item from "./Item";
 
-function ItemList({ wishList }) {
+function ItemList({ productos }) {
+  console.log(productos);
   return (
     <>
       <div className="itemContainer">
-        {wishList.map((product) => (
-          <Item key={product.id} cardList={product} />
+        {productos.map((productos) => (
+          <Item key={productos.id} productos={productos} />
         ))}
       </div>
     </>

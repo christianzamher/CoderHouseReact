@@ -3,24 +3,26 @@ import { Card, ListGroupItem,Nav } from "react-bootstrap";
 import ItemCount from "./ItemCount";
 import { Link } from "react-router-dom";
 
-const Item = ({ cardList }) => {
-  const { nombre, precio, descripcion, imagen , id} = cardList;
+const Item = ({ productos }) => {
+  
+  console.log(productos);
+  
 
  
 
   return (
     <>
       <Card bg="dark" text="white" border="warning" style={{ width: "30rem" }}>
-        <Card.Title>{nombre}</Card.Title>
-        <Card.Img variant="top" className="imgSet" src={`/${imagen}`} />
+        <Card.Title>{productos.nombre}</Card.Title>
+        <Card.Img variant="top" className="imgSet" src={`/${productos.imagen}`} />
         <Card.Body>
-        {descripcion}
+        {productos.descripcion}
           <Card.Text>
-            <ListGroupItem> ${precio} </ListGroupItem>
+            <ListGroupItem> ${productos.precio} </ListGroupItem>
             <br></br>
           </Card.Text>
          
-          <Link className="active" to={`/item/${id}`}>+ Details</Link>
+          <Link className="active" to={`/item/${productos.id}`}>+ Details</Link> 
         </Card.Body>
       </Card>
     </>

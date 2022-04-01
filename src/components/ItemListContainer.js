@@ -84,7 +84,7 @@ console.log(db)
 
 function ItemListContainer() {
   
-  const [productsList, setProductos] = useState([]);
+  const [productos, setProductos] = useState([]);
   const [cargar, setCargar] = useState(false);
   const params = useParams();
   const category = params.id;
@@ -92,60 +92,37 @@ function ItemListContainer() {
 
   useEffect(() => {
 
-      const productCollection = collection(db,"productos");
-      const documentos = getDocs(productCollection);
-      console.log(documentos)
+    if (category){
+      const queryDb = query(collection(db,"productos"),where("categoria", "==", category));
+      getDocs(queryDb)
+      .then((respuesta)=> setProductos(respuesta.docs.map(p=>({...p.data(), id: p.id}))))
 
-    documentos
-      .then((respuesta) => {
-        const auxiliar = []
-        respuesta.forEach((documento)=>{
-          // console.log(documento.data())
-          // console.log(documento.id)
-          const productos = {
-            id : documento.id,
-            ...documento.data()
-          }
-          auxiliar.push(productos)
-        })
-        setCargar(auxiliar)
-        console.log(auxiliar)
-       
-      })
-      .catch(() => {
-        console.dir("hubo un error")
-      })
+      .catch((err) =>
+        console.log(err))
+      
+    }
+    else{
+      getDocs(collection(db,"productos"))
+      .then((respuesta)=> setProductos(respuesta.docs.map(p=>({...p.data(), id: p.id}))))
+      .catch((err) =>
+        console.log(err))
+    }
 
-    // const delay = new Promise((res, rej) => {
-    //   setTimeout(() => {
-    //     res(ArrayProductos);
-    //   }, 1500);
-    // });
-
-    // delay
-    //   .then((res) => {
-    //     setCargar(true);
-    //     if (category) {
-    //       const productoFiltrado = res.filter(
-    //         (product) => category === product.category
-    //       );
-    //       setProductos(productoFiltrado);
-    //     } else {
-    //       setProductos(res);
-    //     }
-    //   })
-    //   .catch((error) => console.dir(error));
+   
   }, [category]);
-  
+  console.log(productos)
+ 
 
   return (
     <>
       <main className="mainContainer">
-        {!cargar ? (
+        {!productos ? (
           <div className="loader">Loading...</div>
         ) : (
-          <ItemList wishList={productsList} />
-        )}
+           <ItemList productos={productos} />
+           
+           )}
+           
       </main>
     </>
   );
