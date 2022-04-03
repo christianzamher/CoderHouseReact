@@ -11,10 +11,10 @@ html,
 body,
 #root {
     height: 100vh;
-    background-image: url("https://img4.goodfon.com/wallpaper/nbig/e/e7/fastfud-gamburger-ovoshchi-ogon-dvoe-eda.jpg");
-    background-repeat: no-repeat;
+    background-image: url("https://ae01.alicdn.com/kf/Ha2e7d325ffe54be3809c77365a3c7627q/Cartel-de-Hot-Dog-carteles-de-hojalata-Vintage-de-comida-decoraci-n-para-restaurante-y-Europa.jpg_Q90.jpg_.webp");
+    background-repeat: repeat;
     background-attachment: fixed;
-    background-size: 100%;
+    /* background-size: 100%; */
     
      background-color: rgb(189, 182, 172); 
 }
@@ -25,17 +25,22 @@ footer {
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: rgba(195, 154, 77, 0.712);
+    background-color: rgb(44, 44, 44);
     height: 100px;
-    width: 200px;
+    width: auto;
     text-align: center;
     position: relative;
     font-size: 30px;
     width: auto;
-    
+    background-attachment:scroll;
     
    
 } 
+
+.headerImg{
+  width: auto;
+  height: 648.5px;
+}
 
 .card-body {
    text-align: center;
@@ -145,7 +150,7 @@ img{
 .footerLink{
   font-size: 20px;
   text-decoration: none;
-  color:rgb(209, 203, 183)
+  color:rgb(255, 251, 252)
   
 }
 

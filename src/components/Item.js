@@ -5,16 +5,16 @@ import { Link } from "react-router-dom";
 
 const Item = ({ productos }) => {
   
-  console.log(productos);
+  
   
 
  
 
   return (
-    <>
-      <Card bg="dark" text="white" border="warning" style={{ width: "30rem" }}>
+    
+      <Card bg="danger" text="white" border="warning" style={{ width: "30rem" }}>
         <Card.Title>{productos.nombre}</Card.Title>
-        <Card.Img variant="top" className="imgSet" src={`/${productos.imagen}`} />
+        <Card.Img variant="top" className="imgSet" src={productos.imagen} />
         <Card.Body>
         {productos.descripcion}
           <Card.Text>
@@ -25,7 +25,7 @@ const Item = ({ productos }) => {
           <Link className="active" to={`/item/${productos.id}`}>+ Details</Link> 
         </Card.Body>
       </Card>
-    </>
+    
   );
 };
 

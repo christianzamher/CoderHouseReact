@@ -5,13 +5,13 @@ import { Link } from "react-router-dom";
 import {  toast } from 'react-toastify';
 import { cartContext } from "./CartContext";
 
-const ItemDetail = ({ wishList}) => {
-  const { nombre, precio, descripcion, imagen } = wishList;
+const ItemDetail = ({ productos}) => {
+
   const [carrito, setCarrito] = useState(false)
   
   
 
-  const item = wishList
+  const item = productos
  const ProviderContexto = useContext(cartContext);
 
   
@@ -29,21 +29,21 @@ const ItemDetail = ({ wishList}) => {
    }
     
   return (
-    <>
+    
       <Card bg="dark" text="white" border="warning" style={{ width: "30rem" }}>
-        <Card.Title>{nombre}</Card.Title>
-        <Card.Img variant="top" className="imgSet" src= {`/${imagen}`} />
+        <Card.Title>{productos.nombre}</Card.Title>
+        <Card.Img variant="top" className="imgSet" src= {productos.imagen} />
         <Card.Body>
-          {descripcion}
+          {productos.descripcion}
           <Card.Text>
-           $ {precio}
+           $ {productos.precio}
             <br></br>
           </Card.Text>
           {carrito ? <Link to="/cart"  className="active" > Go to Cart</Link> :  <ItemCount stock={5} initial={1} onAdd= {onAdd} carrito={carrito}   /> }      
           <Link to="/home" className="active" >Home</Link>
         </Card.Body>
       </Card>
-    </>
+    
   );
 };
 

@@ -3,6 +3,7 @@ import ItemDetail from "./ItemDetail";
 import { toast } from "react-toastify";
 import { useParams } from "react-router-dom";
 import {db} from './Firebase'
+import { getDocs , query, collection,where, doc, getDoc } from "firebase/firestore";
 
 // const ArrayProductos = [
 //   {
@@ -71,34 +72,29 @@ import {db} from './Firebase'
 //   },
 // ];
 const ItemDetailContainer = () => {
-  const [productsList, setProductos] = useState([]);
-  const [cargar, setCargar] = useState(false);
+  const [productos, setProductos] = useState([]);
+  // const [cargar, setCargar] = useState(false);
   const {id} = useParams()
 
   
 
   useEffect(() => {
-    const delay = new Promise((res, rej) => {
-      setTimeout(() => {
-        res(ArrayProductos);
-      }, 2000);
-    });
+   
 
-    delay
-      .then((res) => {
-        setCargar(true);
-        setProductos(res.find((product) => product.id === +id));
-      })
-      .catch((error) => toast.error(error));
-  }, []);
+    const docRef = doc(collection(db,"productos"),id);
+    getDoc(docRef)
+    .then((respuesta)=> setProductos(respuesta.data()))
+
+  }, [id]);
+  console.log(productos);
 
   return (
     <>
       <main className="mainContainer">
-        {!cargar ? (
+        {!productos ? (
           <div className="loader">Loading...</div>
         ) : (
-          <ItemDetail wishList={productsList} />
+          <ItemDetail productos={productos} />
         )}
       </main>
     </>

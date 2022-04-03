@@ -3,7 +3,7 @@ import ItemList from "./ItemList";
 import {db} from './Firebase'
 import { getDocs , query, collection,where } from "firebase/firestore";
 import { useParams } from "react-router-dom";
-console.log(db)
+
 
 
 // const ArrayProductos = [

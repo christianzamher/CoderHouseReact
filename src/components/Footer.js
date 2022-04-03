@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 const Footer = () => {
   return (
     <footer>
-      <>
+      
         <div className="footerDiv">
          <h2>Baldir Armoury Shop</h2>
         <Link className="footerLink" to="/contact">
@@ -13,7 +13,7 @@ const Footer = () => {
           About Us
         </Link>
         </div>
-      </>
+      
     </footer>
   );
 };
