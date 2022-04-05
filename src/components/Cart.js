@@ -3,9 +3,10 @@ import { useContext } from "react";
 import { cartContext } from "./CartContext";
 import { Card, Button } from "react-bootstrap";
 import { Link } from "react-router-dom";
+import {addDoc, collection, serverTimestamp} from "firebase/firestore";
 
 const Cart = () => {
-  const { cart, removeItem, clear, precioTotal, addItem } =
+  const { cart, removeItem, clear, precioTotal } =
     useContext(cartContext);
 
   const check = () => {
@@ -19,8 +20,8 @@ const Cart = () => {
       {cart && cart.length ? (
         <>
           {cart.map((elemento) => (
-            <div id="productos" key={elemento.producto.id}>
-              <Card style={{ width: "18rem" }}>
+            <div  key={elemento.producto.id}>
+              <Card className="cardContainer" style={{ width: "18rem" }}>
                 <Card.Img variant="top" src={elemento.producto.imagen} />
                 <Card.Body>
                   <Card.Title>{elemento.producto.nombre}</Card.Title>
@@ -41,7 +42,7 @@ const Cart = () => {
             </div>
           ))}
           <div>
-            <Card style={{ width: "18rem" }}>
+            <Card className="cardContainer"  style={{ width: "18rem" }}> 
               <Card.Body>
                 <Card.Title>Total Price: ${precioTotal()}</Card.Title>
               </Card.Body>
@@ -64,8 +65,8 @@ const Cart = () => {
           </div>
         </>
       ) : (
-        <Link id="link" to="/">
-          <p className="active">Empty Cart, Go Home!</p>
+        <Link className="emptyCard" to="/">
+          <p >Empty Cart, Go Home!</p>
         </Link>
       )}
     </>

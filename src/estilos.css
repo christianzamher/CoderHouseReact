@@ -7,14 +7,14 @@
     box-sizing: border-box;
 }
 
-html,
-body,
-#root {
+
+body
+ {
     height: 100vh;
-    background-image: url("https://ae01.alicdn.com/kf/Ha2e7d325ffe54be3809c77365a3c7627q/Cartel-de-Hot-Dog-carteles-de-hojalata-Vintage-de-comida-decoraci-n-para-restaurante-y-Europa.jpg_Q90.jpg_.webp");
+    background-image: url("https://media.istockphoto.com/vectors/retro-seamless-fast-food-chicken-menu-pattern-vector-id536663668?b=1&k=20&m=536663668&s=170667a&w=0&h=znSuVgyyGuj1wW5UX2kKF04teT1e-vmJoo4bdM67Hps=");
     background-repeat: repeat;
     background-attachment: fixed;
-    /* background-size: 100%; */
+    
     
      background-color: rgb(189, 182, 172); 
 }
@@ -93,6 +93,137 @@ p{
 
 }
 
+.cardContainer:hover{
+  transform: translateY(-5px) scale(1.005) translateZ(0);
+  box-shadow: 0 24px 36px rgba(0,0,0,0.11),
+    0 24px 46px var(--box-shadow-color);
+}
+
+
+
+.cardContainer{
+  box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.52);
+-webkit-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.52);
+-moz-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.52);
+
+
+}
+.ButtonBuy{
+  cursor: pointer;
+ font-weight: 700;
+ font-family: Helvetica,"sans-serif";
+ transition: all .2s;
+ padding: 10px 20px;
+ border-radius: 100px;
+ background: #cfef00;
+ border: 1px solid transparent;
+ display: flex;
+ align-items: center;
+ font-size: 15px;
+}
+
+.ButtonBuy:hover{
+  background: #a6c900;
+}
+
+.ButtonBuy > svg {
+  width: 34px;
+  margin-left: 10px;
+  transition: transform .3s ease-in-out;
+ }
+ 
+ .ButtonBuy:hover svg {
+  transform: translateX(5px);
+ }
+ 
+ .ButtonBuy:active {
+  transform: scale(0.95);
+ }
+
+ /* From cssbuttons.io by @alexmaracinaru */
+.cta {
+  border: none;
+  background: none;
+  text-decoration: none;
+ }
+ 
+ .cta span {
+  padding-bottom: 7px;
+  letter-spacing: 2px;
+  font-size: 20px;
+  /* padding-right: 15px; */
+  text-transform: uppercase;
+ }
+ 
+ .cta svg {
+  transform: translateX(-8px);
+  transition: all 0.3s ease;
+ }
+ 
+ .cta:hover svg {
+  transform: translateX(0);
+ }
+ 
+ .cta:active svg {
+  transform: scale(0.9);
+ }
+ 
+ .hover-underline-animation {
+  position: relative;
+  color: rgb(255, 255, 255);
+  padding-bottom: 20px;
+ }
+ 
+ .hover-underline-animation:after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  transform: scaleX(0);
+  height: 1.5px;
+  bottom: 0;
+  left: 0;
+  background-color: #000000;
+  transform-origin: bottom right;
+  transition: transform 0.25s ease-out;
+ }
+ 
+ .cta:hover .hover-underline-animation:after {
+  transform: scaleX(1);
+  transform-origin: bottom left;
+ }
+ .btn-group-sm>.btn, .btn-sm {
+  padding: 0.25rem 0.5rem;
+  font-size: .875rem;
+  border-radius: 1.2rem;
+  margin: 10px;
+}
+
+
+
+
+.emptyCard{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: #e4dfdaa6;
+  width: 500px;
+  height: 500px;
+  margin: auto;
+  padding: auto;
+  text-align: center;
+  font-size: 30px;
+  color: black;
+  font-family: 'Roboto', sans-serif;
+  text-decoration: none;
+}
+
+.borderPrice{
+  border-radius: 11px 14px 65px 65px;
+  -webkit-border-radius: 11px 14px 65px 65px;
+  -moz-border-radius: 11px 14px 65px 65px;
+}
+
 .h3Producto{
   text-align: center;
 }
@@ -144,7 +275,8 @@ img{
 }
 
 .card{
-  margin:10px
+  margin:10px;
+  border-radius: 2.25rem;
 }
 
 .footerLink{

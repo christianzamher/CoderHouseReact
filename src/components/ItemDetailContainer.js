@@ -73,7 +73,7 @@ import { getDocs , query, collection,where, doc, getDoc } from "firebase/firesto
 // ];
 const ItemDetailContainer = () => {
   const [productos, setProductos] = useState([]);
-  // const [cargar, setCargar] = useState(false);
+  const [cargar, setCargar] = useState(false);
   const {id} = useParams()
 
   
@@ -84,20 +84,22 @@ const ItemDetailContainer = () => {
     const docRef = doc(collection(db,"productos"),id);
     getDoc(docRef)
     .then((respuesta)=> setProductos(respuesta.data()))
+    .catch((error)=> console.log(error))
+    .finally(()=> setCargar(true))
 
   }, [id]);
   console.log(productos);
 
   return (
-    <>
+    
       <main className="mainContainer">
-        {!productos ? (
+        {!cargar ? (
           <div className="loader">Loading...</div>
         ) : (
           <ItemDetail productos={productos} />
         )}
       </main>
-    </>
+    
   );
 };
 

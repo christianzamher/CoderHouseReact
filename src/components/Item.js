@@ -12,13 +12,13 @@ const Item = ({ productos }) => {
 
   return (
     
-      <Card bg="danger" text="white" border="warning" style={{ width: "30rem" }}>
+      <Card className="cardContainer" bg="danger" text="white" border="warning" style={{ width: "30rem" }}>
         <Card.Title>{productos.nombre}</Card.Title>
         <Card.Img variant="top" className="imgSet" src={productos.imagen} />
         <Card.Body>
         {productos.descripcion}
           <Card.Text>
-            <ListGroupItem> ${productos.precio} </ListGroupItem>
+          <Card.Title className="borderPrice">  ${productos.precio} </Card.Title>
             <br></br>
           </Card.Text>
          

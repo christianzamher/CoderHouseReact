@@ -97,8 +97,8 @@ function ItemListContainer() {
       getDocs(queryDb)
       .then((respuesta)=> setProductos(respuesta.docs.map(p=>({...p.data(), id: p.id}))))
 
-      .catch((err) =>
-        console.log(err))
+      .catch((err) => console.log(err))
+      
       
     }
     else{
@@ -106,6 +106,7 @@ function ItemListContainer() {
       .then((respuesta)=> setProductos(respuesta.docs.map(p=>({...p.data(), id: p.id}))))
       .catch((err) =>
         console.log(err))
+        .finally(()=> setCargar(true))
     }
 
    
@@ -114,7 +115,7 @@ function ItemListContainer() {
  
 
   return (
-    <>
+    
       <main className="mainContainer">
         {!productos ? (
           <div className="loader">Loading...</div>
@@ -124,7 +125,7 @@ function ItemListContainer() {
            )}
            
       </main>
-    </>
+    
   );
 }
 

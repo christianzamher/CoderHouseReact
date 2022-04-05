@@ -30,7 +30,7 @@ const ItemDetail = ({ productos}) => {
     
   return (
     
-      <Card bg="dark" text="white" border="warning" style={{ width: "30rem" }}>
+      <Card id="cardId" className="cardContainer" bg="dark" text="white" border="warning" style={{ width: "30rem" }}>
         <Card.Title>{productos.nombre}</Card.Title>
         <Card.Img variant="top" className="imgSet" src= {productos.imagen} />
         <Card.Body>
@@ -39,7 +39,15 @@ const ItemDetail = ({ productos}) => {
            $ {productos.precio}
             <br></br>
           </Card.Text>
-          {carrito ? <Link to="/cart"  className="active" > Go to Cart</Link> :  <ItemCount stock={5} initial={1} onAdd= {onAdd} carrito={carrito}   /> }      
+          {/* {carrito ? <Link to="/cart"  className="active" > Go to Cart</Link> :  <ItemCount stock={5} initial={1} onAdd= {onAdd} carrito={carrito}   /> }  */}
+          {carrito ? 
+          <Link to="/cart" class="cta">
+          <span class="hover-underline-animation"> Go to Cart</span>
+          <svg id="arrow-horizontal" xmlns="http://www.w3.org/2000/svg" width="30" height="10" viewBox="0 0 46 16">
+          <path id="Path_10" data-name="Path 10" d="M8,0,6.545,1.455l5.506,5.506H-30V9.039H12.052L6.545,14.545,8,16l8-8Z" transform="translate(30)"></path>
+          </svg>
+          </Link> :  <ItemCount stock={5} initial={1} onAdd= {onAdd} carrito={carrito}   /> }    
+          
           <Link to="/home" className="active" >Home</Link>
         </Card.Body>
       </Card>

@@ -12,7 +12,7 @@ function NavBar() {
     return (
         
         
-        <Navbar bg="light" expand="lg">
+        <Navbar bg="white" expand="lg">
             <Container className="pb-6N" >
                 <Navbar.Brand as={Link} to="/Home">Coder-Commerce</Navbar.Brand>
                 <Navbar.Toggle aria-controls="basic-navbar-nav" />
