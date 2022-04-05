@@ -32,7 +32,7 @@ const ItemDetail = ({ productos}) => {
    
       
 
-       <Card  className="cardContainer " bg="dark" text="white" border="warning" style={{ width: "25rem" }}>
+       <Card  className="cardContainer " bg="dark" text="white" border="warning" style={{ width: "20rem" }}>
         <Card.Title>{productos.nombre}</Card.Title>
         <Card.Img variant="top" className="imgSet" src= {productos.imagen} />
         <Card.Body>
