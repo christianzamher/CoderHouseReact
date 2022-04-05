@@ -1,8 +1,6 @@
-// import {toast} from 'react-toastify'
 import {Route , Routes} from 'react-router-dom'
 import ItemListContainer from './ItemListContainer'
 import ItemDetailContainer from "./ItemDetailContainer"
-import CartWidget from './CartWidget'
 import Cart from './Cart'
 
 

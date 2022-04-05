@@ -1,9 +1,8 @@
 import React, { useState, useEffect } from "react";
 import ItemDetail from "./ItemDetail";
-import { toast } from "react-toastify";
 import { useParams } from "react-router-dom";
 import {db} from './Firebase'
-import { getDocs , query, collection,where, doc, getDoc } from "firebase/firestore";
+import { collection, doc, getDoc } from "firebase/firestore";
 
 // const ArrayProductos = [
 //   {
