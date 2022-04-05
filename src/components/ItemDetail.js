@@ -29,8 +29,10 @@ const ItemDetail = ({ productos}) => {
    }
     
   return (
-    
-      <Card  className="cardContainer mainContainer" bg="dark" text="white" border="warning" style={{ width: "30rem" }}>
+   
+      // <div className = " mainContainer">
+
+       <Card  className="cardContainer " bg="dark" text="white" border="warning" style={{ width: "30rem" }}>
         <Card.Title>{productos.nombre}</Card.Title>
         <Card.Img variant="top" className="imgSet" src= {productos.imagen} />
         <Card.Body>
@@ -49,7 +51,10 @@ const ItemDetail = ({ productos}) => {
           
           <Link to="/home" className="active" >Home</Link>
         </Card.Body>
-      </Card>
+      </Card> 
+            // </div>
+          
+
     
   );
 };

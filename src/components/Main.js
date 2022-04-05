@@ -10,7 +10,7 @@ function Main() {
   
   return (
       
-      <main className= "mainContainer">
+      <main className='mainContainer' >
         
         <Routes>
           <Route path="/" element= {<ItemListContainer/>}/>
