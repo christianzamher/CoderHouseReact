@@ -6,7 +6,7 @@ const Item = ({ productos }) => {
     
    return (
     
-      <Card className="cardContainer" bg="danger" text="white" border="warning" style={{ width: "30rem" }}>
+      <Card className="cardContainer" bg="danger" text="white" border="warning" style={{ width: "25rem" }}>
         <Card.Title>{productos.nombre}</Card.Title>
         <Card.Img variant="top" className="imgSet" src={productos.imagen} />
         <Card.Body> {productos.descripcion}
