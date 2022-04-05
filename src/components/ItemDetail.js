@@ -30,7 +30,7 @@ const ItemDetail = ({ productos}) => {
     
   return (
    
-      // <div className = " mainContainer">
+      
 
        <Card  className="cardContainer " bg="dark" text="white" border="warning" style={{ width: "30rem" }}>
         <Card.Title>{productos.nombre}</Card.Title>
@@ -52,7 +52,7 @@ const ItemDetail = ({ productos}) => {
           <Link to="/home" className="active" >Home</Link>
         </Card.Body>
       </Card> 
-            // </div>
+           
           
 
     

@@ -118,7 +118,7 @@ p{
  border-radius: 100px;
  background: #cfef00;
  border: 1px solid transparent;
- display: flex;
+
  align-items: center;
  font-size: 15px;
 }
@@ -234,12 +234,12 @@ p{
     flex-direction: row-reverse;
     flex-wrap: wrap;
     justify-content: space-evenly;
-    /* align-items: flex-start; */
+   
 } 
 
 .itemContainer{
   display: flex;
-  /* flex-flow: nowrap; */
+  
   flex-wrap: wrap;
   justify-content: space-evenly;
   padding: 5px;
@@ -247,10 +247,11 @@ p{
 
 .divContainer{
   display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: row;
-  padding: 5px;
+    justify-content: center;
+    align-items: baseline;
+    flex-direction: row;
+    padding: 5px;
+    font-size: 20px;
 }
 
 .imgSet{

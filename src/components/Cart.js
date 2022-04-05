@@ -31,12 +31,7 @@ const Cart = () => {
                   <Card.Text>
                     SubTotal: ${elemento.cantidad * elemento.producto.precio}{" "}
                   </Card.Text>
-                  <Button
-                    variant="danger"
-                    onClick={() => removeItem(elemento.producto.id)}
-                  >
-                    X
-                  </Button>
+                  <Button variant="danger" onClick={() => removeItem(elemento.producto.id)}>X</Button>
                 </Card.Body>
               </Card>
             </div>
@@ -44,30 +39,16 @@ const Cart = () => {
           <div>
             <Card className="cardContainer"  style={{ width: "18rem" }}> 
               <Card.Body>
-                <Card.Title>Total Price: ${precioTotal()}</Card.Title>
+              <Card.Title>Total Price: ${precioTotal()}</Card.Title>
               </Card.Body>
-              <Button
-                onClick={() => {
-                  check();
-                }}
-              >
-                <p>Just Buy!</p>
-              </Button>
+              <Button onClick={() => {check()}}>Just Buy!</Button>
               <Card.Text>or </Card.Text>
-              <Button
-                onClick={() => {
-                  check();
-                }}
-              >
-                <p>Clear All</p>
-              </Button>
+              <Button onClick={() => {check()}}> Clear All</Button>
             </Card>
           </div>
         </>
       ) : (
-        <Link className="emptyCard" to="/">
-          <p >Empty Cart, Go Home!</p>
-        </Link>
+        <Link className="emptyCard" to="/"><p >Empty Cart, Go Home!</p></Link>
       )}
     </>
   );
