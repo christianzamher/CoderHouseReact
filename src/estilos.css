@@ -234,12 +234,12 @@ p{
     flex-direction: row-reverse;
     flex-wrap: wrap;
     justify-content: space-evenly;
-    align-items: flex-start;
+    /* align-items: flex-start; */
 } 
 
 .itemContainer{
   display: flex;
-  flex-flow: nowrap;
+  /* flex-flow: nowrap; */
   flex-wrap: wrap;
   justify-content: space-evenly;
   padding: 5px;
