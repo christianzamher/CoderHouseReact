@@ -105,6 +105,7 @@ p{
   box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.52);
 -webkit-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.52);
 -moz-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.52);
+   
 
 
 }
@@ -228,13 +229,13 @@ p{
   text-align: center;
 }
 
-.mainContainer{
+ .mainContainer{
   display: flex;
     flex-direction: row-reverse;
     flex-wrap: wrap;
     justify-content: space-evenly;
     align-items: flex-start;
-}
+} 
 
 .itemContainer{
   display: flex;
