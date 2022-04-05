@@ -24,6 +24,7 @@ function ItemListContainer() {
       .then((respuesta)=> setProductos(respuesta.docs.map(p=>({...p.data(), id: p.id}))))
 
       .catch((err) => console.log(err))
+      .finally(()=> cargar(true))
       
       
     }
