@@ -11,7 +11,6 @@ import { useParams } from "react-router-dom";
 function ItemListContainer() {
   
   const [productos, setProductos] = useState([]);
-  const [cargar, setCargar] = useState(false);
   const params = useParams();
   const category = params.id;
   
@@ -33,7 +32,7 @@ function ItemListContainer() {
       .then((respuesta)=> setProductos(respuesta.docs.map(p=>({...p.data(), id: p.id}))))
       .catch((err) =>
         console.log(err))
-        .finally(()=> setCargar(true))
+       
     }
 
    
@@ -44,7 +43,7 @@ function ItemListContainer() {
   return (
     
       <main className="mainContainer">
-        {!cargar ? (
+        {!productos ? (
           <div className="loader">Loading...</div>
         ) : (
            <ItemList productos={productos} />
