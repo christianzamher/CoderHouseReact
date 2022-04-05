@@ -42,7 +42,7 @@ function ItemListContainer() {
 
   return (
     
-      <main className="mainContainer">
+      <main >
         {!productos ? (
           <div className="loader">Loading...</div>
         ) : (

@@ -26,7 +26,7 @@ const ItemDetailContainer = () => {
 
   return (
     
-      <main className="mainContainer">
+      <main >
         {!cargar ? (
           <div className="loader">Loading...</div>
         ) : (
