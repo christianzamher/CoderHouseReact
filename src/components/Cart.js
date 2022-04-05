@@ -3,7 +3,7 @@ import { useContext } from "react";
 import { cartContext } from "./CartContext";
 import { Card, Button } from "react-bootstrap";
 import { Link } from "react-router-dom";
-import {addDoc, collection, serverTimestamp} from "firebase/firestore";
+// import {addDoc, collection, serverTimestamp} from "firebase/firestore";
 
 const Cart = () => {
   const { cart, removeItem, clear, precioTotal } =
