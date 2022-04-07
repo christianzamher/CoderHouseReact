@@ -22,9 +22,10 @@ function NavBar() {
                         <Nav.Link as={Link} to="/aboutus">About Us</Nav.Link>
                         <Nav.Link as={Link} to="/Contact">Contact</Nav.Link>
                         <NavDropdown title="Category" id="basic-nav-dropdown">
-                            <NavDropdown.Item as={Link} to="/category/hamburguesa">Burguers</NavDropdown.Item>
                             <NavDropdown.Item as={Link} to="/category/bebida">Drinks</NavDropdown.Item>
+                            <NavDropdown.Item as={Link} to="/category/hamburguesa">Burguers</NavDropdown.Item>
                             <NavDropdown.Item as={Link} to="/category/milanesas">Milanesas</NavDropdown.Item>
+                            <NavDropdown.Item as={Link} to="/category/pizza">Pizza</NavDropdown.Item>
                             <NavDropdown.Item as={Link} to="/category/desayuno">Breackfasts & Brunches</NavDropdown.Item>
                             <NavDropdown.Item as={Link} to="/category/postre">Dessert</NavDropdown.Item>
                         </NavDropdown>

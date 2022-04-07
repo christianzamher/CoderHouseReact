@@ -3,15 +3,41 @@ import { useContext } from "react";
 import { cartContext } from "./CartContext";
 import { Card, Button } from "react-bootstrap";
 import { Link } from "react-router-dom";
-// import {addDoc, collection, serverTimestamp} from "firebase/firestore";
+import {addDoc, collection, serverTimestamp} from "firebase/firestore";
+import { db } from "./Firebase"
+
 
 const Cart = () => {
-  const { cart, removeItem, clear, precioTotal } =
-    useContext(cartContext);
+  const { cart, removeItem, clear, precioTotal } = useContext(cartContext);
 
   const check = () => {
     clear();
   };
+
+  const handleClick = () => {
+        
+    const orden = {
+        buyer : {
+            nombre : "Christian",
+            telefono : "555555555",
+            email : "czh1983@gmail.com"
+        },
+        items : cart,
+        date : serverTimestamp(),
+        total : precioTotal()
+    }
+    const ordenesCollection = collection(db,"ordenes")
+    const pedido = addDoc(ordenesCollection,orden)
+    console.log(pedido)
+
+    pedido
+    .then(res=>{
+        console.log(res.id)
+    })
+
+}
+
+
 
   return (
     <>
@@ -41,9 +67,9 @@ const Cart = () => {
               <Card.Body>
               <Card.Title>Total Price: ${precioTotal()}</Card.Title>
               </Card.Body>
-              <Button onClick={() => {check()}}>Just Buy!</Button>
+              <Button onClick={handleClick}>Just Buy!</Button>
               <Card.Text>or </Card.Text>
-              <Button onClick={() => {check()}}> Clear All</Button>
+             <Button onClick={() => {check()}}> Clear All</Button>
             </Card>
           </div>
         </>
