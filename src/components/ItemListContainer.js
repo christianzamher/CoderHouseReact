@@ -11,6 +11,7 @@ import { useParams } from "react-router-dom";
 function ItemListContainer() {
   
   const [productos, setProductos] = useState([]);
+  // const [cargar, setCargar] = useState(false);
   const params = useParams();
   const category = params.id;
   
@@ -44,7 +45,7 @@ function ItemListContainer() {
     
       <main >
         {!productos ? (
-          <div className="loader">Loading...</div>
+          <div className="loader"></div>
         ) : (
            <ItemList productos={productos} />
            

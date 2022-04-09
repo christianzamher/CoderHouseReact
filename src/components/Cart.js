@@ -1,5 +1,5 @@
 import React from "react";
-import { useContext } from "react";
+import { useContext , useState } from "react";
 import { cartContext } from "./CartContext";
 import { Card, Button } from "react-bootstrap";
 import { Link } from "react-router-dom";
@@ -9,6 +9,8 @@ import { db } from "./Firebase"
 
 const Cart = () => {
   const { cart, removeItem, clear, precioTotal } = useContext(cartContext);
+  const [compra , setCompra] = useState([])
+  let infoOrden = []
 
   const check = () => {
     clear();
@@ -19,7 +21,7 @@ const Cart = () => {
     const orden = {
         buyer : {
             nombre : "Christian",
-            telefono : "555555555",
+            apellido : "Zamora Hermida",
             email : "czh1983@gmail.com"
         },
         items : cart,
@@ -28,17 +30,19 @@ const Cart = () => {
     }
     const ordenesCollection = collection(db,"ordenes")
     const pedido = addDoc(ordenesCollection,orden)
-    console.log(pedido)
+   
+    infoOrden = orden
+    pedido.then(res=>{console.log(compra)
+      setCompra({...infoOrden, id:res.id})})
+    
+  }
+  
+  console.log(compra)
 
-    pedido
-    .then(res=>{
-        console.log(res.id)
-    })
 
-}
-
-
-
+  
+  
+  
   return (
     <>
       
@@ -62,19 +66,29 @@ const Cart = () => {
               </Card>
             </div>
           ))}
-          <div>
+          
+      
             <Card className="cardContainer"  style={{ width: "18rem" }}> 
-              <Card.Body>
-              <Card.Title>Total Price: ${precioTotal()}</Card.Title>
-              </Card.Body>
-              <Button onClick={handleClick}>Just Buy!</Button>
-              <Card.Text>or </Card.Text>
-             <Button onClick={() => {check()}}> Clear All</Button>
+               <Card.Body>
+               <Card.Img variant="top" src="https://decorabonito.com/wp-content/uploads/elementor/thumbs/Gracias_por_su_compra_-oztn62hr7638bue839447utpb9gxdsiqspv975q6cg.png" />
+                </Card.Body>
+                <Card.Text> Usuario: </Card.Text>
+                <Card.Text>Nombre: {compra.buyer?.nombre} </Card.Text>
+                <Card.Text> Apellido: {compra.buyer?.apellido} </Card.Text>
+                <Card.Text> Contacto: {compra.buyer?.email} </Card.Text>
+                <Card.Text>Orden de Compra:  {compra.id} </Card.Text>
+                <Card.Text>Total: ${compra.total} </Card.Text> 
+               <Button onClick={handleClick}>Confirmar compra</Button>
+               <Card.Text> O </Card.Text>
+             <Button onClick={() => {check()}}> Borrar Carrito</Button>
             </Card>
-          </div>
-        </>
+         
+         
+         </>
       ) : (
-        <Link className="emptyCard" to="/"><p >Empty Cart, Go Home!</p></Link>
+        <Link className="emptyCard" to="/"><p >Carrito Vacio , volver a <span>Inicio</span></p></Link>
+
+        
       )}
     </>
   );
