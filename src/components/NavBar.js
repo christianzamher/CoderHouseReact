@@ -1,12 +1,11 @@
 import { Container, Nav, Navbar, NavDropdown } from "react-bootstrap"
 import CartWidget from "./CartWidget"
 import { Link } from "react-router-dom";
-// import { cartContext } from "./CartContext";
-// import React, { useContext} from "react";
+
 
 function NavBar() {
    
-    // const {cart} = useContext(cartContext);
+    
    
    
     return (

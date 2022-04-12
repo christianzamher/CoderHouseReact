@@ -13,7 +13,8 @@ function CartWidget() {
      
 
      <>
-        {itemTotales()>0 ? <Link className="BsCart active" to="/cart">
+        {itemTotales()>0 ? 
+        <Link className="BsCart active" to="/cart">
                           <BsCart4 size="2em" color="black" />
            
                           <p>({itemTotales()})</p>

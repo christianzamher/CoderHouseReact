@@ -11,7 +11,7 @@ import { useParams } from "react-router-dom";
 function ItemListContainer() {
   
   const [productos, setProductos] = useState([]);
-  // const [cargar, setCargar] = useState(false);
+  const [cargar, setCargar] = useState(false);
   const params = useParams();
   const category = params.id;
   
@@ -22,7 +22,7 @@ function ItemListContainer() {
       const queryDb = query(collection(db,"productos"),where("categoria", "==", category));
       getDocs(queryDb)
       .then((respuesta)=> setProductos(respuesta.docs.map(p=>({...p.data(), id: p.id}))))
-
+      .then(()=> setCargar(true))
       .catch((err) => console.log(err))
       
       
@@ -31,6 +31,7 @@ function ItemListContainer() {
     else{
       getDocs(collection(db,"productos"))
       .then((respuesta)=> setProductos(respuesta.docs.map(p=>({...p.data(), id: p.id}))))
+      .then(()=> setCargar(true))
       .catch((err) =>
         console.log(err))
        
@@ -44,7 +45,7 @@ function ItemListContainer() {
   return (
     
       <main >
-        {!productos ? (
+        {!cargar ? (
           <div className="loader"></div>
         ) : (
            <ItemList productos={productos} />

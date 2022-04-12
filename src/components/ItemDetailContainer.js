@@ -7,7 +7,7 @@ import { collection, doc, getDoc } from "firebase/firestore";
 
 const ItemDetailContainer = () => {
   const [productos, setProductos] = useState([]);
-  const [cargar, setCargar] = useState(false);
+   const [cargar, setCargar] = useState(false);
   const {id} = useParams()
 
   
@@ -19,7 +19,7 @@ const ItemDetailContainer = () => {
     getDoc(docRef)
     .then((respuesta)=> setProductos(respuesta.data()))
     .catch((error)=> console.log(error))
-    .finally(()=> setCargar(true))
+    .then(()=> setCargar(true))
 
   }, [id]);
  
