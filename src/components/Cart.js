@@ -5,6 +5,7 @@ import { Card, Button } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import {addDoc, collection, serverTimestamp} from "firebase/firestore";
 import { db } from "./Firebase"
+import {  toast } from 'react-toastify';
 
 
 const Cart = () => {
@@ -29,18 +30,18 @@ const Cart = () => {
         date : serverTimestamp(),
         total : precioTotal()
     }
-
     
-
+    
+    
     const ordenesCollection = collection(db,"ordenes")
     const pedido = addDoc(ordenesCollection,orden)
-   
+    
     infoOrden = orden
-    pedido.then(res=>{console.log(compra)
-      setCompra({...infoOrden, id:res.id})})
-      
+    pedido.then(res=>{setCompra({...infoOrden, id:res.id})})
+    
     
   }
+  
   
   
 
@@ -84,9 +85,9 @@ const Cart = () => {
                 <Card.Text>Orden de Compra:  {compra.id} </Card.Text>
                 <Card.Text>Total: ${compra.total} </Card.Text> 
                 {compra.id ?
-                  <Link to="/home" className="active"  >Compra Finalizada</Link>
+                  <Link to="/home" className="active"  onClick={() => {check()}}  >Compra Finalizada </Link>
                   :
-               <Button onClick={handleBuy}>Generar Compra</Button>}
+               <Button  onClick={handleBuy}>Generar Compra</Button>}
                <Card.Text> ó: </Card.Text>
              <Button onClick={() => {check()}}> Borrar Carrito</Button>
             </Card>
@@ -96,31 +97,7 @@ const Cart = () => {
         )}
 
         
-      {/* <div className="form">
-       <div className="title">Welcome</div>
-        <div className="subtitle">Let's create your account!</div>
-         <div className="input-container ic1">
-          <input id="firstname" className="input" type="text" placeholder=" " />
-         <div className="cut"></div>
-          <label for="firstname" className="placeholder">Nombre</label>
-        </div>
-        <div class="input-container ic2">
-          <input id="lastname" className="input" type="text" placeholder=" " />
-        <div class="cut"></div>
-          <label  htmlFor="lastname" className="placeholder">  {compra.id}</label>
-        </div>
-        <div class="input-container ic2">
-          <input id="email" className="input" type="text" placeholder=" " />
-        <div class="cut cut-short"></div>
-          <label for="email" className="placeholder">Email</label>
-        </div>
-        
-      {compra.id ?
-         <Link to="/home" className="active" >Compra Finalizada</Link>
-         :
-         <button type="text" className="submit" onClick={handleBuy}>Comprar</button>
-        }
-        </div> */}
+     
     </>
   );
 };

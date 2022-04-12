@@ -22,7 +22,7 @@ const ItemDetail = ({ productos}) => {
      setCarrito(!carrito)
      ProviderContexto.addItem(item, unidades)
            
-     toast.success("Done !", {
+     toast.success("Producto en Carrito!", {
       position: toast.POSITION.TOP_RIGHT
     });
  

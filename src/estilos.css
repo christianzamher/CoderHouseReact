@@ -26,8 +26,8 @@ footer {
     align-items: center;
     justify-content: center;
     background-color: rgb(44, 44, 44);
-    height: 100px;
-    width: auto;
+    
+    
     text-align: center;
     position: relative;
     font-size: 30px;
@@ -499,3 +499,4 @@ img{
 .submit:active {
   background-color: #06b;
 }
+

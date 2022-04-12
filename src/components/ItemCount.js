@@ -15,7 +15,7 @@ function ItemCount ({stock,initial,onAdd, carrito}) {
             setNumero(numeroProducto - 1)
         }}
 
-        const handleclick = ()=>{
+        const handleclickear = ()=>{
             onAdd(numeroProducto)
         
         }
@@ -30,7 +30,7 @@ function ItemCount ({stock,initial,onAdd, carrito}) {
                     <Button variant="info" size="sm"  onClick={aumentar} disabled= {numeroProducto === stock}>+</Button>{' '}
                     
                     </div>
-                    <button className="ButtonBuy " onClick={handleclick}>
+                    <button className="ButtonBuy " onClick={handleclickear}>
                     <span>{!carrito ? 'Comprar' : 'Ir al Carrito'}</span>
                     <svg width="34" height="34" viewBox="0 0 74 74" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <circle cx="37" cy="37" r="35.5" stroke="black" strokeWidth="3"></circle>
