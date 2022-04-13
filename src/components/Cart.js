@@ -5,7 +5,7 @@ import { Card, Button } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import {addDoc, collection, serverTimestamp} from "firebase/firestore";
 import { db } from "./Firebase"
-import {  toast } from 'react-toastify';
+// import {  toast } from 'react-toastify';
 
 
 const Cart = () => {
