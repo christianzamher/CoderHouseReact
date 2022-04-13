@@ -19,14 +19,15 @@ body
      background-color: rgb(189, 182, 172); 
 }
 
-
-
+/* 
+footer */
 footer {
     display: flex;
     align-items: center;
     justify-content: center;
     background-color: rgb(44, 44, 44);
-    
+    color: rgb(255, 251, 252);
+    flex-direction: column;
     
     text-align: center;
     position: relative;
@@ -36,6 +37,27 @@ footer {
     
    
 } 
+
+.footerDer{
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    color: rgb(255, 251, 252);
+    font-size: 20px;
+    
+}
+.footerIzq{
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    color: rgb(255, 251, 252);
+    font-size: 20px;
+    
+}
+.parrafoFooter{
+  text-align: center;
+    margin: 10px;
+}
 .navbar {
  
   border-radius: 0px 0px 20px 20px !important;
