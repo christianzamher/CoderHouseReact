@@ -5,7 +5,7 @@ const Footer = () => {
   
     <footer className="footer">
   <div className="footer__addr">
-    <h1 className="footer__logo">A man</h1>
+    <h1 className="footer__logo">FooderScript</h1>
         
     <h2>Contacto</h2>
     
@@ -13,7 +13,7 @@ const Footer = () => {
       123 Fake Street . 1870
       <br></br>
           
-      <a className="footer__btn" href="mailto:fooderscript@gmail.com">Escribinos!</a>
+      <Link className="footer__btn" to="mailto:fooderscript@gmail.com">Escribinos!</Link>
     </address>
   </div>
   
@@ -23,15 +23,15 @@ const Footer = () => {
 
       <ul className="nav__ul">
         <li>
-          <a href="#">Hamburguesas</a>
+          <Link to="/category/hamburguesa">Hamburguesas</Link>
         </li>
 
         <li>
-          <a href="#">Milanesas</a>
+          <Link to="/category/milanesas">Milanesas</Link>
         </li>
             
         <li>
-          <a href="#">Pizzas</a>
+          <Link to="/category/pizza">Pizzas</Link>
         </li>
       </ul>
     </li>
@@ -41,27 +41,27 @@ const Footer = () => {
       
       <ul class="nav__ul nav__ul--extra">
         <li>
-          <a href="#">Postres</a>
+          <Link to="/category/postre">Postres</Link>
         </li>
         
         <li>
-          <a href="#">Desauyos y Meriendas</a>
+          <Link  to="/category/desayuno">Desauyos y Meriendas</Link>
         </li>
         
         <li>
-          <a href="#">Bebidas</a>
+          <Link to="/category/bebida">Bebidas</Link>
         </li>
         
         <li>
-          <a href="#">Contacto</a>
+          <Link to="/Contact">Contacto</Link>
         </li>
         
         <li>
-          <a href="#">Nosotros</a>
+          <Link to="/aboutus">Nosotros</Link>
         </li>
         
         {/* <li>
-          <a href="#">IoT</a>
+          <a to="">IoT</a>
         </li> */}
       </ul>
     </li>
@@ -71,15 +71,15 @@ const Footer = () => {
       
       <ul className="nav__ul">
         <li>
-          <a href="#">Politicias de Privacidad</a>
+          <Link to="">Politicias de Privacidad</Link>
         </li>
         
         <li>
-          <a href="#">Terminos de Uso</a>
+          <Link to="">Terminos de Uso</Link>
         </li>
         
         <li>
-          <a href="#">Mapa del Sitio</a>
+          <Link to="">Mapa del Sitio</Link>
         </li>
       </ul>
     </li>
@@ -87,10 +87,7 @@ const Footer = () => {
   
   <div className="legal">
     <p>&copy; 2022 FooderScript. Derechos Reservados.</p>
-    
-    {/* <div className="legal__links">
-      <span>Made with <span class="heart">♥</span> remotely from Anywhere</span>
-    </div> */}
+   
   </div>
 </footer>
   );

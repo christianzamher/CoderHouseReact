@@ -13,7 +13,7 @@ function NavBar() {
         
         <Navbar bg="white" expand="lg">
             <Container className="pb-6N" >
-                <Navbar.Brand as={Link} to="/Home">FooderScript</Navbar.Brand>
+                <Navbar.Brand as={Link} to="/Home">FooderScript </Navbar.Brand>
                 <Navbar.Toggle aria-controls="basic-navbar-nav" />
                 <Navbar.Collapse id="basic-navbar-nav">
                     <Nav className="me-auto">
