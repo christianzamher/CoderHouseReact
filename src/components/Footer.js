@@ -37,7 +37,6 @@ const Footer = () => {
     </li>
     
     <li class="nav__item nav__item--extra">
-      <h2 class="nav__title"></h2>
       
       <ul class="nav__ul nav__ul--extra">
         <li>
@@ -45,12 +44,13 @@ const Footer = () => {
         </li>
         
         <li>
-          <Link  to="/category/desayuno">Desauyos y Meriendas</Link>
+          <Link  to="/category/desayuno">Desayunos y Meriendas</Link>
         </li>
         
         <li>
           <Link to="/category/bebida">Bebidas</Link>
         </li>
+      <h2 className="nav__title">Comunicacion</h2>
         
         <li>
           <Link to="/Contact">Contacto</Link>
@@ -60,9 +60,7 @@ const Footer = () => {
           <Link to="/aboutus">Nosotros</Link>
         </li>
         
-        {/* <li>
-          <a to="">IoT</a>
-        </li> */}
+        
       </ul>
     </li>
     

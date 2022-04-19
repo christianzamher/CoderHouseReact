@@ -16,7 +16,7 @@ const Contacto = () => {
         <input id="lastname" className="input" type="text" placeholder=" " />
         <div className="cut"></div>
         <label htmlFor="lastname" className="placeholder">
-          Last name
+          Apellido
         </label>
       </div>
       <div className="input-container ic2">
@@ -27,7 +27,7 @@ const Contacto = () => {
         </label>
       </div>
       <button type="text" className="submit">
-        submit
+        Enviar
       </button>
     </div>
   )
