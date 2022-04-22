@@ -9,8 +9,8 @@ La web muestra un conjunto de productos de comida rapida a seleccionar, el usuar
 
 
 
-Mira **Deployment** para conocer como desplegar el proyecto.
-https://codercommercereact.netlify.app/
+Link **Deployment**  :
+* https://codercommercereact.netlify.app/
 
 
 ### Pre-requisitos 📋
@@ -57,11 +57,10 @@ Christian Zamora Hermida
 
 
 
-## Expresiones de Gratitud 🎁
+## Formas de Ayudarme: 🎁
 
 * Comenta a otros sobre este proyecto 📢
-* Invita una cerveza 🍺 o un café ☕ a alguien del equipo. 
-* Da las gracias públicamente 🤓.
-* Dona con cripto a esta dirección: `0xf253fc233333078436d111175e5a76a649890000`
-* etc.
+* Invitame una cerveza 🍺 o un café ☕ . 
+* publicalo en tus redes.
+
 
