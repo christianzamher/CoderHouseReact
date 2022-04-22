@@ -1,70 +1,67 @@
-# Getting Started with Create React App
+[![Netlify Status](https://api.netlify.com/api/v1/badges/9361f901-02e4-4807-9f34-259676d36bbe/deploy-status)](https://app.netlify.com/sites/codercommercereact/deploys)
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Proyecto E-Commerce
 
-## Available Scripts
+Este proyecto fue realizado durante las clases del curso de React para CoderHouse
+La web muestra un conjunto de productos de comida rapida a seleccionar, el usuario será guiado durante todo el proceso hasta poder finalizar la eleccion, recibiendo un numero de orden de compra 
 
-In the project directory, you can run:
+## Comenzando 🚀
 
-### `npm start`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+Mira **Deployment** para conocer como desplegar el proyecto.
+https://codercommercereact.netlify.app/
 
-### `npm test`
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### Pre-requisitos 📋
 
-### `npm run build`
+### Librerias y Frameworks Utilizados:
+   *"bootstrap": "^5.1.3",
+   * "firebase": "^9.6.10",
+   * "react": "^17.0.2",
+   * "react-bootstrap": "^2.2.3",
+   * "react-dom": "^17.0.2",
+   * "react-icons": "^4.3.1",
+   * "react-router-dom": "^6.2.2",
+   * "react-scripts": "5.0.0",
+   * *"react-toastify": "^8.2.0"
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### Instalación 🔧
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+*Para cloner este proyecto en tu Pc . En la linea de comando, escribe la siguiente linea:
 
-### `npm run eject`
+ https://github.com/christianzamher/CoderHouseReact.git
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+*Instalar las dependencias antes mencionadas para que el proyecto corra correctamente. En la linea de comando escribir lo siguiente:
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+npm install
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+*Una vez inicializado el repositorio, escribir:
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+npm start
 
-## Learn More
+# Demo:
+![alt text]https://github.com/christianzamher/CoderHouseReact/blob/master/public/images/1.png "Pantalla de Inicio")
+![alt text]https://github.com/christianzamher/CoderHouseReact/blob/master/public/images/2.png "Seleccion de producto")
+![alt text]https://github.com/christianzamher/CoderHouseReact/blob/master/public/images/3.png "eleccion y cantidad")
+![alt text]https://github.com/christianzamher/CoderHouseReact/blob/master/public/images/4.png "previa a finalizar compra")
+![alt text]https://github.com/christianzamher/CoderHouseReact/blob/master/public/images/5.png "compra finalizada ")
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## Autor ✒️
 
-### Code Splitting
+Christian Zamora Hermida
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
 
-### Analyzing the Bundle Size
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
 
-### Making a Progressive Web App
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+## Expresiones de Gratitud 🎁
 
-### Advanced Configuration
+* Comenta a otros sobre este proyecto 📢
+* Invita una cerveza 🍺 o un café ☕ a alguien del equipo. 
+* Da las gracias públicamente 🤓.
+* Dona con cripto a esta dirección: `0xf253fc233333078436d111175e5a76a649890000`
+* etc.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
