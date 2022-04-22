@@ -14,7 +14,7 @@ const Item = ({ productos }) => {
         <Card.Title className="borderPrice">  ${productos.precio} </Card.Title>
         <br></br>
         </Card.Text>
-        <Link className="active" to={`/item/${productos.id}`}>+ Details</Link> 
+        <Link className="active" to={`/item/${productos.id}`}>+ Info</Link> 
         </Card.Body>
       </Card>
     

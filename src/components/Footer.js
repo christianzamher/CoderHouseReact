@@ -69,15 +69,15 @@ const Footer = () => {
       
       <ul className="nav__ul">
         <li>
-          <Link to="">Politicias de Privacidad</Link>
+          <Link to="/">Politicas de Privacidad</Link>
         </li>
         
         <li>
-          <Link to="">Terminos de Uso</Link>
+          <Link to="/">Terminos de Uso</Link>
         </li>
         
         <li>
-          <Link to="">Mapa del Sitio</Link>
+          <Link to="/">Mapa del Sitio</Link>
         </li>
       </ul>
     </li>
