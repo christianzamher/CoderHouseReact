@@ -42,11 +42,11 @@ npm install
 npm start
 
 # Demo:
-![alt text]https://github.com/christianzamher/CoderHouseReact/blob/master/public/images/1.png "Pantalla de Inicio")
-![alt text]https://github.com/christianzamher/CoderHouseReact/blob/master/public/images/2.png "Seleccion de producto")
-![alt text]https://github.com/christianzamher/CoderHouseReact/blob/master/public/images/3.png "eleccion y cantidad")
-![alt text]https://github.com/christianzamher/CoderHouseReact/blob/master/public/images/4.png "previa a finalizar compra")
-![alt text]https://github.com/christianzamher/CoderHouseReact/blob/master/public/images/5.png "compra finalizada ")
+![alt text](https://github.com/christianzamher/CoderHouseReact/blob/master/public/images/1.png "Pantalla de Inicio")
+![alt text](https://github.com/christianzamher/CoderHouseReact/blob/master/public/images/2.png "Seleccion de producto")
+![alt text](https://github.com/christianzamher/CoderHouseReact/blob/master/public/images/3.png "eleccion y cantidad")
+![alt text](https://github.com/christianzamher/CoderHouseReact/blob/master/public/images/4.png "previa a finalizar compra")
+![alt text](https://github.com/christianzamher/CoderHouseReact/blob/master/public/images/5.png "compra finalizada ")
 
 
 ## Autor ✒️
