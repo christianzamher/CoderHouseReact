@@ -16,7 +16,7 @@ Link **Deployment**  :
 ### Pre-requisitos 📋
 
 ### Librerias y Frameworks Utilizados:
-   *"bootstrap": "^5.1.3",
+   * "bootstrap": "^5.1.3",
    * "firebase": "^9.6.10",
    * "react": "^17.0.2",
    * "react-bootstrap": "^2.2.3",
@@ -29,7 +29,7 @@ Link **Deployment**  :
 ### Instalación 🔧
 
 
-*Para cloner este proyecto en tu Pc . En la linea de comando, escribe la siguiente linea:
+*Para clonar este proyecto en tu Pc . En la linea de comando, escribe la siguiente linea:
 
  https://github.com/christianzamher/CoderHouseReact.git
 
